@@ -1,0 +1,19 @@
+.register-container .add-form {
+  /* width: 100%; */
+  /* display: flex; */
+  flex-basis: 100%;
+}
+
+.register-container .extrato {
+  /* width: 100%; */
+  /* display: flex; */
+  /* flex-basis: 100%; */
+  margin-top: 60px;
+}
+
+.register-container .extrato ul {
+  /* width: 100%; */
+  background: #f0f0f5;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
