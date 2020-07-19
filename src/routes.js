@@ -1,18 +1,22 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
+import history from "./services/history";
 
 import Extrato from './pages/Extrato';
 import Darf from './pages/Darf';
 import Posicao from './pages/Posicao';
+import Login from './pages/Login';
 
 export default function Routes() {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <Switch>
-        <Route path="/" exact component={Posicao} />
-        <Route path="/operations" component={Extrato} />
-        <Route path="/darf" component={Darf} />
+        <PrivateRoute path="/" exact component={Posicao} />
+        <Route path="/Login" exact component={Login} />
+        <PrivateRoute path="/operations" component={Extrato} />
+        <PrivateRoute path="/darf" component={Darf} />
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 }

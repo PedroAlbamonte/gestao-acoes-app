@@ -1,6 +1,7 @@
 import React from 'react';
 // https://github.com/negomi/react-burger-menu#animations
 import { stack as Menu } from "react-burger-menu";
+import Logout from '../Logout';
 
 export default props => {
     return (
@@ -15,6 +16,10 @@ export default props => {
 
       <a className="menu-item" href="/darf">
         DARF
+      </a>
+      <br />
+      <a onClick={(e) =>{e.preventDefault();}  } className="menu-item" href="">
+        <Logout />
       </a>
     </Menu>
     );

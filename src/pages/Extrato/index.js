@@ -5,6 +5,12 @@ import api from '../../services/api'
 
 import './styles.css';
 
+//var login = JSON.parse(localStorage.getItem('@GestaoAcoes/Login'))
+// console.log(login.accessToken);
+// console.log(login.tokenId);
+// console.log(login.profileObj.imageUrl);
+// console.log(login.profileObj.name);
+
 export default function Extrato() {
   const [operacoes, setOperacoes] = useState([]);
 
