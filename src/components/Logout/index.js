@@ -7,7 +7,7 @@ const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 function Logout () {
     
     const onSuccess = (res) => {
-        localStorage.removeItem('@GestaoAcoes/Login');
+        localStorage.removeItem(global.LOCALSTORAGE_LOGIN);
         console.log( '[Logout Success] currentUser:',  res );
         history.push('/login');
     }

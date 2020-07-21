@@ -7,23 +7,59 @@ import React from 'react'
 import * as AuthService from '../../services/AuthService'
 import { Redirect, Route } from 'react-router-dom'
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
+// const PrivateRoute = ({ component: Component, ...rest }) => {
 
-  // Add your own authentication on the below line.
-  const isLoggedIn = AuthService.isLoggedIn()
+//   var isLoggedIn = false;
+//   const promise = AuthService.isLoggedIn().then( (response) => {
+//     console.log(`response Promise = ${response} `);
+//     isLoggedIn = response
+//     console.log(`isLoggedIn PromiseAll = ${isLoggedIn} `);
+//     return (
+//       <Route
+//         {...rest}
+//         render={props =>
+//           isLoggedIn ? (
+//             <Component {...props} />
+//           ) : (
+//             <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
+//           )
+//         }
+//       />
+//     )
+//   })
+// }
 
-  return (
-    <Route
-      {...rest}
-      render={props =>
-        isLoggedIn ? (
-          <Component {...props} />
-        ) : (
-          <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
-        )
-      }
-    />
-  )
+class PrivateRoute extends React.Component {
+  state = {
+    loading: true,
+    isAuthenticated: false,
+  }
+
+  componentDidMount() {
+    AuthService.isLoggedIn().then((isAuthenticated) => {
+      console.log(`isLoggedIn Promise = ${isAuthenticated} `);
+      this.setState({
+        loading: false,
+        isAuthenticated,
+      });
+    });
+  }
+  render() {
+    const { component: Component, ...rest } = this.props;
+    if (this.state.loading) {
+      return <div>LOADING</div>;
+    } else {
+      return (
+        <Route {...rest} render={props => (
+          <div>
+            {!this.state.isAuthenticated && <Redirect to={{ pathname: '/login', state: { from: this.props.location } }} />}
+            <Component {...this.props} />
+          </div>
+          )}
+        />
+      )
+    }
+  }
 }
 
-export default PrivateRoute
+export default PrivateRoute;

@@ -6,7 +6,7 @@ const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
 function Login({ redirectFunction: RedirectFunction, ...rest }) {
     const onSuccess = (res) => {
-        localStorage.setItem('@GestaoAcoes/Login', JSON.stringify(res));
+        localStorage.setItem(global.LOCALSTORAGE_LOGIN, JSON.stringify(res));
         console.log( '[Login Success] currentUser:',  res );
         RedirectFunction();
     }

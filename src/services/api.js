@@ -7,7 +7,7 @@ const api = axios.create({
 
 api.interceptors.request.use(
   config => {
-    config.headers.Authorization = `Bearer ${AuthService.usersData().tokenId}`;
+    config.headers.Authorization = `Bearer ${AuthService.usersData() !== null ? AuthService.usersData().tokenId : '' }`;
     return config;
   },
   error => {

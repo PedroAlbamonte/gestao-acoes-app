@@ -13,7 +13,7 @@ export default function Routes() {
     <Router history={history}>
       <Switch>
         <PrivateRoute path="/" exact component={Posicao} />
-        <Route path="/Login" exact component={Login} />
+        <Route path="/login" exact component={Login} />
         <PrivateRoute path="/operations" component={Extrato} />
         <PrivateRoute path="/darf" component={Darf} />
       </Switch>

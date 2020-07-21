@@ -1,0 +1,1 @@
+global.LOCALSTORAGE_LOGIN = '@GestaoAcoes/Login';
