@@ -10,6 +10,8 @@ function OperacaoItem({ operacao, onDelete }) {
     await onDelete(operacao);
   }
 
+  console.log(operacao);
+
   return (
     <li className="operacao-item">
       <div className="item"><strong>{operacao.tipo} </strong></div>

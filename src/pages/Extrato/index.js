@@ -31,19 +31,27 @@ export default function Extrato() {
   }
 
   async function handleAddOperacao(data) {
-    const response = await api.post('/operations', data)
+    const response = await api.post('/operations', data);
     
+    const ir = Number(data.ir);
+    const preco = Number(data.preco);
+    const quantidade = Number(data.quantidade);
+    const subtotal = Number(data.subtotal);
+    const corretagem = Number(data.corretagem);
+    const total = Number(data.total);
+    const tipo = Number(data.tipo);
+
     const operacao = {
       id: response.data.id,
-      tipo: data.tipo,
+      tipo,
       data: data.data,
       papel: data.papel,
-      preco: data.preco,
-      quantidade: data.quantidade,
-      subtotal: data.subtotal,
-      corretagem: data.corretagem,
-      ir: data.ir,
-      total: data.total,
+      preco,
+      quantidade,
+      subtotal,
+      corretagem,
+      ir,
+      total,
     };
 
     setOperacoes([...operacoes, operacao]);

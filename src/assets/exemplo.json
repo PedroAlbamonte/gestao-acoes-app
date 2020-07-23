@@ -1,0 +1,27 @@
+[
+    {
+        "id": 2,
+        "tipo": 1,
+        "papel": "FLRY3",
+        "data": "2019-09-10T00:00:00.000Z",
+        "preco": "23.55",
+        "quantidade": 100,
+        "subtotal": "2355.00",
+        "corretagem": "0.95",
+        "ir": "0.00",
+        "total": "2355.95",
+        "user_id": 1
+    },
+    {
+        "quantidade": 500,
+        "preco": 0.6130800000000001,
+        "total": 306.54,
+        "totalAno": 0,
+        "precoAno": 0,
+        "nome": "BBASG333",
+        "opcao": true,
+        "mesExercicio": 7,
+        "anoExercicio": 2020,
+        "cotacao": 0
+    }
+]
