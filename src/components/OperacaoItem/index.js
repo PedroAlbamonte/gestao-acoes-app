@@ -10,12 +10,12 @@ function OperacaoItem({ operacao, onDelete }) {
     await onDelete(operacao);
   }
 
-  console.log(operacao);
+  // console.log(operacao);
 
   return (
     <li className="operacao-item">
       <div className="item"><strong>{operacao.tipo} </strong></div>
-      <div className="item">{operacao.data} </div>
+      <div className="item">{operacao.data.substring(0, 10)} </div>
       <div className="item"><strong>{operacao.papel}</strong></div>
       <div className="item">
         <NumberFormat 
