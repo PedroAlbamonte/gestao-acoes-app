@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PosicaoItem from '../../components/PosicaoItem'
 import api from '../../services/api'
 
+import './styles.css';
+
 export default function Posicao() {
   const [acoes, setAcoes] = useState([]);
 
@@ -18,7 +20,7 @@ export default function Posicao() {
   return (
     <div className="register-container">
       <div className="content">
-        <table className="darf-table">
+        <table className="posicao-table">
           <thead>
             <tr>
               <td><strong>Papel</strong></td>

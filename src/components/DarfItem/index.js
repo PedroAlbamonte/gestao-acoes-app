@@ -30,7 +30,7 @@ function DarfItem({ darf }) {
         <TableCell ><strong>{darf.mesPagamento} </strong></TableCell>
         
 
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.opcoes.lucro < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.opcoes.lucro} 
             displayType={'text'} 
@@ -41,7 +41,7 @@ function DarfItem({ darf }) {
             prefix={'R$'} />
         </TableCell>
 
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.normal.lucro < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.normal.lucro} 
             displayType={'text'} 
@@ -51,7 +51,7 @@ function DarfItem({ darf }) {
             fixedDecimalScale={true}
             prefix={'R$'} />
         </TableCell>
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.normal.saldo < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.normal.saldo} 
             displayType={'text'} 
@@ -61,7 +61,7 @@ function DarfItem({ darf }) {
             fixedDecimalScale={true}
             prefix={'R$'} />
         </TableCell>
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.normal.valor < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.normal.valor} 
             displayType={'text'} 
@@ -72,7 +72,7 @@ function DarfItem({ darf }) {
             prefix={'R$'} />
         </TableCell>
 
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.daytrade.lucro < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.daytrade.lucro} 
             displayType={'text'} 
@@ -82,7 +82,7 @@ function DarfItem({ darf }) {
             fixedDecimalScale={true}
             prefix={'R$'} />
         </TableCell>
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.daytrade.saldo < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.daytrade.saldo} 
             displayType={'text'} 
@@ -92,7 +92,7 @@ function DarfItem({ darf }) {
             fixedDecimalScale={true}
             prefix={'R$'} />
         </TableCell>
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.daytrade.valor < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.daytrade.valor} 
             displayType={'text'} 
@@ -103,7 +103,7 @@ function DarfItem({ darf }) {
             prefix={'R$'} />
         </TableCell>
         
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.fii.lucro < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.fii.lucro} 
             displayType={'text'} 
@@ -113,7 +113,7 @@ function DarfItem({ darf }) {
             fixedDecimalScale={true}
             prefix={'R$'} />
         </TableCell>
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.fii.saldo < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.fii.saldo} 
             displayType={'text'} 
@@ -123,7 +123,7 @@ function DarfItem({ darf }) {
             fixedDecimalScale={true}
             prefix={'R$'} />
         </TableCell>
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.fii.valor < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.fii.valor} 
             displayType={'text'} 
@@ -134,7 +134,7 @@ function DarfItem({ darf }) {
             prefix={'R$'} />
         </TableCell>
 
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.ir.pago < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.ir.pago} 
             displayType={'text'} 
@@ -144,7 +144,7 @@ function DarfItem({ darf }) {
             fixedDecimalScale={true}
             prefix={'R$'} />
         </TableCell>
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.ir.saldo < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.ir.saldo} 
             displayType={'text'} 
@@ -154,7 +154,7 @@ function DarfItem({ darf }) {
             fixedDecimalScale={true}
             prefix={'R$'} />
         </TableCell>
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${darf.valorDevido < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={darf.valorDevido} 
             displayType={'text'} 

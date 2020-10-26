@@ -1,0 +1,43 @@
+.posicao-table {
+  width:100%; 
+  border-collapse:collapse; 
+}
+
+.posicao-table td{ 
+  display: table-cell;
+  padding:7px; 
+  text-align: center;
+  vertical-align: center;
+  font-size: 15px;
+}
+.posicao-table td.valor{ 
+  min-width: 80px;
+}
+
+.posicao-table td.alingRight{
+  text-align: right;
+}
+
+/* provide some minimal visual accomodation for IE8 and below */
+.posicao-table > thead > tr{
+  background: grey;
+}
+
+.posicao-table > thead th{
+  border:#1b1d20 1px solid;
+}
+
+.posicao-table > tbody td{
+  border:#4e95f4 1px solid;
+}
+
+/* .posicao-table > tbody > tr{
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+} */
+
+.posicao-table > tbody > tr:nth-child(odd){ 
+  background: #b8d1f3;
+}
+.posicao-table > tbody > tr:nth-child(even){ 
+  background: #dae5f4;
+}

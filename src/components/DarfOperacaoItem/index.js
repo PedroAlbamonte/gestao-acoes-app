@@ -20,7 +20,7 @@ function DarfOperacaoItem({ operacao }) {
             decimalScale={0}
             fixedDecimalScale={true} />
         </TableCell>
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${operacao.valorCompra < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={operacao.valorCompra} 
             displayType={'text'} 
@@ -30,7 +30,7 @@ function DarfOperacaoItem({ operacao }) {
             fixedDecimalScale={true}
             prefix={'R$'} />
         </TableCell>
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${operacao.valorVenda < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={operacao.valorVenda} 
             displayType={'text'} 
@@ -40,7 +40,7 @@ function DarfOperacaoItem({ operacao }) {
             fixedDecimalScale={true}
             prefix={'R$'} />
         </TableCell>
-        <TableCell className='alingRight valor'>
+        <TableCell className={`alingRight valor ${operacao.lucro < 0 ? "negativo" : ""}`}>
           <NumberFormat 
             value={operacao.lucro} 
             displayType={'text'} 
