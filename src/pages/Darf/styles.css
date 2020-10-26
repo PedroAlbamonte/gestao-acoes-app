@@ -19,26 +19,46 @@
 }
 
 /* provide some minimal visual accomodation for IE8 and below */
-.darf-table thead tr{
+.darf-table > thead > tr{
   background: grey;
 }
 
-.darf-table thead td{
+.darf-table > thead th{
   border:#1b1d20 1px solid;
 }
 
-.darf-table tbody td{
+.darf-table > tbody td{
   border:#4e95f4 1px solid;
 }
 
-.darf-table tbody tr{
+/* .darf-table > tbody > tr{
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
-}
+} */
 
-.darf-table tbody tr:nth-child(odd){ 
+.darf-table > tbody > tr:nth-child(4n+1){ 
   background: #b8d1f3;
 }
+.darf-table > tbody > tr:nth-child(4n+3){ 
+  background: #dae5f4;
+}
 
-.darf-table tbody tr:nth-child(even){
+/* Tabela interna */
+
+.darf-operacao-table > thead th{
+  border:#1b1d20 1px solid;
+}
+
+.darf-operacao-table > thead > tr{
+  background: grey;
+}
+
+.darf-operacao-table > tbody td{
+  border:#4e95f4 1px solid;
+}
+
+.darf-operacao-table > tbody > tr:nth-child(odd){ 
+  background: #b8d1f3;
+}
+.darf-operacao-table > tbody > tr:nth-child(even){ 
   background: #dae5f4;
 }

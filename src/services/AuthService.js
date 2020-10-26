@@ -1,4 +1,4 @@
-import React from 'react'
+//import React from 'react'
 import api from './api'
 
 export const isLoggedIn = async () => {
@@ -14,8 +14,8 @@ export const isLoggedIn = async () => {
 
 export const usersData = () => {
     var login = JSON.parse(localStorage.getItem(global.LOCALSTORAGE_LOGIN));
-    // console.log('login');
-    // console.log(login);
+    console.log('login');
+    console.log(login);
     if (login === null) {
         return null;
     } else {

@@ -13,18 +13,18 @@ function OperacaoForm( {onSubmit} ) {
   const [ir, setIr] = useState('');
   const [total, setTotal] = useState('');
 
-  async function calculaTotais() {
-    setSubtotal((quantidade*preco).toFixed(2));
-    // console.log((quantidade*preco).toFixed(2));
-    if (tipo === "1"){
-      setTotal((quantidade*preco+Number(corretagem)).toFixed(2));
-    }else{
-      setTotal((quantidade*preco-Number(corretagem)).toFixed(2));
-    }
-    // console.log("CT: " + quantidade + "|" + preco + "|" + subtotal + "|" + corretagem);
-  }
-
   useEffect(() => {
+    async function calculaTotais() {
+      setSubtotal((quantidade*preco).toFixed(2));
+      // console.log((quantidade*preco).toFixed(2));
+      if (tipo === "1"){
+        setTotal((quantidade*preco+Number(corretagem)).toFixed(2));
+      }else{
+        setTotal((quantidade*preco-Number(corretagem)).toFixed(2));
+      }
+      // console.log("CT: " + quantidade + "|" + preco + "|" + subtotal + "|" + corretagem);
+    }
+
     calculaTotais();
   }, [tipo, quantidade, preco, corretagem]);
 

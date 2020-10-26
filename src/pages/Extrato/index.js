@@ -25,7 +25,8 @@ export default function Extrato() {
   }, []);
   
   async function handleDeleteOperacao(data) {
-    const responseDelete = await api.delete('/operations/' + data.id);
+    //const responseDelete = await api.delete('/operations/' + data.id);
+    await api.delete('/operations/' + data.id);
     const response = await api.get('/operations');
     setOperacoes(response.data);
   }

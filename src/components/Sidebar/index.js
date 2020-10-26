@@ -18,9 +18,9 @@ export default props => {
         DARF
       </a>
       <br />
-      <a onClick={(e) =>{e.preventDefault();}  } className="menu-item" href="">
+      <button onClick={(e) =>{e.preventDefault();}  } className="menu-item" >
         <Logout />
-      </a>
+      </button>
     </Menu>
     );
   }

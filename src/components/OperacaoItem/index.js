@@ -78,7 +78,7 @@ function OperacaoItem({ operacao, onDelete }) {
           prefix={'R$'} />
       </div>
       <div className="item">
-        <a href="#" onClick={ handleClick } >Delete</a>
+        <button onClick={ handleClick } >Delete</button>
       </div>
     </li>
   );
