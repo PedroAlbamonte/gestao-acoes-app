@@ -27,7 +27,27 @@ function PosicaoItem({ acao }) {
       </td>
       <td>
         <NumberFormat 
+          value={acao.preco*acao.quantidade} 
+          displayType={'text'} 
+          decimalSeparator={','}
+          thousandSeparator={'.'} 
+          decimalScale={2}
+          fixedDecimalScale={true}
+          prefix={'R$'} />
+      </td>
+      <td>
+        <NumberFormat 
           value={acao.cotacao} 
+          displayType={'text'} 
+          decimalSeparator={','}
+          thousandSeparator={'.'} 
+          decimalScale={2}
+          fixedDecimalScale={true}
+          prefix={'R$'} />
+      </td>
+      <td>
+        <NumberFormat 
+          value={acao.cotacao*acao.quantidade} 
           displayType={'text'} 
           decimalSeparator={','}
           thousandSeparator={'.'} 
@@ -46,24 +66,7 @@ function PosicaoItem({ acao }) {
           prefix={'R$'} />
       </td>
       <td>
-        <NumberFormat 
-          value={acao.precoAno} 
-          displayType={'text'} 
-          decimalSeparator={','}
-          thousandSeparator={'.'} 
-          decimalScale={2}
-          fixedDecimalScale={true}
-          prefix={'R$'} />
-      </td>
-      <td>
-        <NumberFormat 
-          value={(acao.cotacao * acao.quantidade) - (acao.quantidade*acao.precoAno) } 
-          displayType={'text'} 
-          decimalSeparator={','}
-          thousandSeparator={'.'} 
-          decimalScale={2}
-          fixedDecimalScale={true}
-          prefix={'R$'} />
+        {acao.data_vencimento} 
       </td>
     </tr>
   );

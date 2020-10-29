@@ -26,10 +26,11 @@ export default function Posicao() {
               <td><strong>Papel</strong></td>
               <td><strong>Quantidade</strong></td>
               <td><strong>Média Paga</strong></td>
+              <td><strong>Montante Pago</strong></td>
               <td><strong>Cotação</strong></td>
+              <td><strong>Montante Atual</strong></td>
               <td><strong>Lucro (Pago x Atual)</strong></td>
-              <td><strong>Preço Ano</strong></td>
-              <td><strong>Lucro (Ano x Atual)</strong></td>
+              <td><strong>Data Vencimento Opção</strong></td> 
             </tr>
           </thead>
           
