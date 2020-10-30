@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Loader } from "react-full-page-loader-overlay";
 import OperacaoItem from '../../components/OperacaoItem'
 import OperacaoForm from '../../components/OperacaoForm'
 import api from '../../services/api'
@@ -12,6 +13,7 @@ import './styles.css';
 // console.log(login.profileObj.name);
 
 export default function Extrato() {
+  const [loading, setLoading] = useState([]);
   const [operacoes, setOperacoes] = useState([]);
 
   useEffect(() => {
@@ -22,6 +24,7 @@ export default function Extrato() {
     }
 
     loadOperacoes();
+    setLoading(false);
   }, []);
   
   async function handleDeleteOperacao(data) {
@@ -32,6 +35,7 @@ export default function Extrato() {
   }
 
   async function handleAddOperacao(data) {
+    setLoading(true);
     const response = await api.post('/operations', data);
     
     const ir = Number(data.ir);
@@ -56,12 +60,14 @@ export default function Extrato() {
     };
 
     setOperacoes([...operacoes, operacao]);
+    setLoading(false);
   }
 
   return (
     <div className="register-container">
+      <Loader show={loading} design={3} centerBorder={"#7d40e7"} leftBorder={"#7d40e7"} rightBorder={"#7d40e7"} />
       <div className='add-form'>
-        <OperacaoForm onSubmit={handleAddOperacao}/>
+        <OperacaoForm onSubmit={handleAddOperacao} loading={loading} />
       </div>
 
       <div className='extrato'>

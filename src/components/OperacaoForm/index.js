@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './styles.css';
 
-function OperacaoForm( {onSubmit} ) {
+function OperacaoForm( {onSubmit, loading} ) {
   const [tipo, setTipo] = useState('1');
   const [data, setData] = useState('');
   const [papel, setPapel] = useState('');
@@ -164,7 +164,7 @@ function OperacaoForm( {onSubmit} ) {
         />
       </div>
 
-      <button type="submit">Incluir</button>
+      <button type="submit" disabled={loading} >Incluir</button>
     </form>
   );
 }
