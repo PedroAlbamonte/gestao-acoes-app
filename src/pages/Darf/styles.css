@@ -29,6 +29,8 @@
 
 .darf-table > thead th{
   border:#1b1d20 1px solid;
+  position: sticky;
+  top: 0;
 }
 
 .darf-table > tbody td{
